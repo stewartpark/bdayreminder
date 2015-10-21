@@ -1,12 +1,22 @@
 <div class="container">
-  <div class="">
-    <h1>Sign in to the birthday reminder!</h1>
-  </div>
-  <div class="panel panel-default">
-    <div class="panel-body">
-      <div class="text-center">
-        <button class="btn btn-default btn-info" ng-click="loginWithDrchrono()">Sign in with <img src="/static/images/drchrono.png" height="16" /></button>
+  <div class="row">
+    <div class="col-md-5">
+      <div class="">
+        <h1>Sign in to Birthday Reminder!</h1>
       </div>
+      <br />
+      If you <b>already have</b> a <img src="/static/images/drchrono.png" height="16" style="margin-top: -4px;"> account, please continue signing in, using the button below:<br /><br />
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <div class="text-center">
+
+            <button class="btn btn-default btn-warning" ng-click="loginWithDrchrono()">Sign in with <img src="/static/images/drchrono.png" height="16" style="margin-top: -4px;" /></button><br />
+          </div>
+        </div>
+      </div>
+      If you don't have an account, please go to the <a href="https://www.drchrono.com/pricing/">registration page</a>.
     </div>
+    <div class="col-md-7">
+      <img src="https://www.drchrono.com/site_media/cb-ee341100/public/images/product-medical-billing.png" style="width: 100%;">
   </div>
 </div>
