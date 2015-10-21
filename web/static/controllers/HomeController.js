@@ -25,5 +25,15 @@ angular.module("BdayReminder").controller("HomeController", function($scope, $ti
     }
   };
 
+  $scope.sendEmails = function() {
+    var patients = $scope.patients.filter(function(o){
+      return $scope.birthdayFilter(o);
+    });
+
+    BdayReminderService.sendEmails(patients, function(){
+      alert('Done');
+    });
+  };
+
   $scope.getValues();
 });

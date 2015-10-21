@@ -52,6 +52,15 @@ angular.module('BdayReminder').service('BdayReminderService', function($filter, 
   };
 
   this.sendEmails = function(list, cb) {
-    
+    console.log(list);
+    $http.post("/api/v1/patients", {list: list}).
+    success(function(data) {
+      console.log(data);
+      cb();
+    }).
+    error(function(err) {
+      console.error('Error while fetching a list of patients.');
+      cb();
+    });
   };
 });

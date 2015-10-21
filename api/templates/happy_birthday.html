@@ -1,0 +1,15 @@
+<!doctype html>
+<html>
+  <body>
+    Happy birthday from {% if doctor.suffix %}{{ doctor.suffix }}. {% endif %}{{ doctor.last_name }}!<br />
+    <br />
+    Hello {{ patient.first_name }} {{ patient.last_name }},<br />
+    <br />
+    I hope you're doing well on this special day!<br />
+    Please visit <a href="http://drchrono.com">drchrono</a> to check your EMR!<br />
+    If you have any questions about the latest results of your test, please contact me via this email: {{ doctor.email }}<br />
+    <br />
+    Sincerely,<br />
+    {% if doctor.suffix %}{{ doctor.suffix }}. {% endif %}{{ doctor.first_name }} {{ doctor.last_name }}<br />
+  </body>
+</html>

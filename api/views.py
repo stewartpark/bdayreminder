@@ -5,7 +5,8 @@ from django.http import JsonResponse, HttpResponseNotFound
 from django.http import HttpResponseRedirect, HttpResponse
 from django.conf import settings
 from .models import Token
-import requests
+from .tasks import send_emails
+import requests, json
 
 
 class PatientsV1View(TemplateView):
@@ -39,6 +40,14 @@ class PatientsV1View(TemplateView):
         patients = self._get_list_of_patients(req.session['token'])
         return JsonResponse({
             'results': patients
+        })
+
+    def post(self, req):
+        """Send emails to the patients"""
+        body = json.loads(req.body)
+        task = send_emails.delay(req.session['token'], body["list"])
+        return JsonResponse({
+            'task_id': task.id
         })
 
 

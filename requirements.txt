@@ -1,4 +1,5 @@
 django
+redis
 Celery[redis]
 django-celery
 django-celery-model
