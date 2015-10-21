@@ -9,6 +9,7 @@ Birthday Reminder, written in Python/Django + Celery + Angular.js.
 ![](https://github.com/stewartpark/bdayreminder/blob/master/misc/Main.png)
 ![](https://github.com/stewartpark/bdayreminder/blob/master/misc/List.png)
 ![](https://github.com/stewartpark/bdayreminder/blob/master/misc/Stats.png)
+![](https://github.com/stewartpark/bdayreminder/blob/master/misc/TestEmail.png)
 
 ## How to deploy via Docker
 
