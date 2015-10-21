@@ -7,7 +7,7 @@
         <th class="text-center">Birthday</th>
         <th class="text-center">Gender</th>
         <th>Email</th>
-        <th class="text-center">D-day</th>
+        <th class="text-center">Days left until birthday</th>
       </tr>
     </thead>
     <tbody>
@@ -20,7 +20,7 @@
           'fa-male': patient.gender == 'Male'
         }" ng-style="{'color': ({'Female': 'red', 'Male': 'blue'})[patient.gender]}" /></td>
         <td>{{ patient.email }}</td>
-        <td class="text-center">D-{{ calculateDday(patient.date_of_birth) }}</td>
+        <td class="text-center">{{ calculateDday(patient.date_of_birth) }} day(s)</td>
       </tr>
       <tr ng-if="patients.length == 0">
         <td colspan="6" class="text-center">No results found</td>

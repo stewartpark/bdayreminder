@@ -1,4 +1,4 @@
-var app = angular.module('BdayReminder', ['ngRoute', 'ngCookies', 'ui.bootstrap']).config(function($routeProvider, $httpProvider) {
+var app = angular.module('BdayReminder', ['ngRoute', 'ngCookies', 'ui.bootstrap', 'chart.js']).config(function($routeProvider, $httpProvider) {
 
   $httpProvider.defaults.xsrfCookieName = 'csrftoken';
   $httpProvider.defaults.xsrfHeaderName = 'X-CSRFToken';

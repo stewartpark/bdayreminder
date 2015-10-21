@@ -24,6 +24,7 @@
     "angular": "angularjs#~1.4.7",
     "jquery": "~2.1.4",
     "angular-cookies": "~1.4.7",
-    "font-awesome": "~4.4.0"
+    "font-awesome": "~4.4.0",
+    "angular-chart.js": "~0.8.5"
   }
 }
