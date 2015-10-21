@@ -3,7 +3,7 @@ Birthday Reminder built for ![](https://github.com/stewartpark/bdayreminder/blob
 
 Birthday Reminder, written in Python/Django + Celery + Angular.js.
 
-[Demo](http://dev.epilet.com:8080/)
+[Demo](http://dev.epilet.com:8000/)
 
 ![](https://github.com/stewartpark/bdayreminder/blob/master/misc/Login.png)
 ![](https://github.com/stewartpark/bdayreminder/blob/master/misc/Main.png)
