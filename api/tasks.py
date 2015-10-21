@@ -1,3 +1,4 @@
+"""."""
 from __future__ import absolute_import
 
 from django.core.mail import send_mail
@@ -20,6 +21,7 @@ def _get_doctor(token, doctor):
 
 @shared_task
 def send_emails(token, list_):
+    """Send emails to the patient with rendered HTMLs."""
     doctors = {}
 
     for x in list_:

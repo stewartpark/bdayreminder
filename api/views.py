@@ -6,7 +6,8 @@ from django.http import HttpResponseRedirect, HttpResponse
 from django.conf import settings
 from .models import Token
 from .tasks import send_emails
-import requests, json
+import requests
+import json
 
 
 class PatientsV1View(TemplateView):
@@ -43,7 +44,10 @@ class PatientsV1View(TemplateView):
         })
 
     def post(self, req):
-        """Send emails to the patients"""
+        """Send emails to the patients.
+
+        It fires the email sending task to the Celery work queue.
+        """
         body = json.loads(req.body)
         task = send_emails.delay(req.session['token'], body["list"])
         return JsonResponse({
@@ -54,8 +58,7 @@ class PatientsV1View(TemplateView):
 class ActionsLogInV1View(TemplateView):
     """The endpoint class for `/api/v1/login`.
 
-    This class is used to check if the user is logged in, or to store the token
-    in the database for later use.
+    This class is used to check if the user is logged in, or to log out.
     """
 
     def get(self, req):
@@ -69,6 +72,7 @@ class ActionsLogInV1View(TemplateView):
             return HttpResponseNotFound("The user is not logged in.")
 
     def delete(self, req):
+        """Log out."""
         del req.session['is_logged']
         del req.session['token']
         return HttpResponse("")
