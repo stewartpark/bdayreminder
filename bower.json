@@ -1,0 +1,29 @@
+{
+  "name": "bday_reminder",
+  "authors": [
+    "Stewart Park <jyp@epilet.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "web/static/libs",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-bootstrap": "~0.14.2",
+    "angular-route": "~1.4.7",
+    "bootstrap": "~3.3.5",
+    "angular": "angularjs#~1.4.7",
+    "jquery": "~2.1.4",
+    "angular-cookies": "~1.4.7",
+    "font-awesome": "~4.4.0"
+  }
+}

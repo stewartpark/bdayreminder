@@ -1,0 +1,5 @@
+django
+Celery[redis]
+django-celery
+django-celery-model
+requests

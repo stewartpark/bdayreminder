@@ -1,0 +1,30 @@
+<div class="container">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th style="width: 64px;">Photo</th>
+        <th>Full name</th>
+        <th class="text-center">Birthday</th>
+        <th class="text-center">Gender</th>
+        <th>Email</th>
+        <th class="text-center">D-day</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="patient in patients">
+        <td class="text-center"><img ng-src="{{ patient.patient_photo }}" height="50" alt="" />
+        <td>{{ patient.first_name }} {{ patient.last_name }}</td>
+        <td class="text-center">{{ patient.date_of_birth }}</td>
+        <td class="text-center"><i class="fa" ng-class="{
+          'fa-female': patient.gender == 'Female',
+          'fa-male': patient.gender == 'Male'
+        }" ng-style="{'color': ({'Female': 'red', 'Male': 'blue'})[patient.gender]}" /></td>
+        <td>{{ patient.email }}</td>
+        <td class="text-center">D-{{ calculateDday(patient.date_of_birth) }}</td>
+      </tr>
+      <tr ng-if="patients.length == 0">
+        <td colspan="6" class="text-center">No results found</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
