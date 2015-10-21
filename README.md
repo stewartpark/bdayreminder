@@ -1,5 +1,5 @@
-Birthday Reminder built for ![](https://github.com/stewartpark/bdayreminder/blob/master/misc/drchrono.png)
-====================================
+Birthday Reminder built for <img src="https://github.com/stewartpark/bdayreminder/blob/master/misc/drchrono.png" height="30" />
+=====================================================
 
 Birthday Reminder, written in Python/Django + Celery + Angular.js.
 
