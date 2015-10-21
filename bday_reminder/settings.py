@@ -111,6 +111,13 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+# Mailer settings
+EMAIL_HOST = os.environ.get("EMAIL_HOST")
+EMAIL_PORT = int(os.environ.get("EMAIL_PORT", "25"))
+EMAIL_HOST_USER = os.environ.get("EMAIL_USER")
+EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_PASSWORD")
+EMAIL_USE_TLS = bool(os.environ.get("EMAIL_USE_TLS", "1"))
+
 
 # Celery settings
 # The settings are read from the env(Docker's --link option)
