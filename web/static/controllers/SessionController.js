@@ -17,4 +17,8 @@ angular.module("BdayReminder").controller("SessionController", function($scope, 
       }
     });
   });
+
+  $scope.clickLogOut = function() {
+
+  };
 });

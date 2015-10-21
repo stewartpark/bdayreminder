@@ -1,4 +1,4 @@
-angular.module("BdayReminder").controller("HomeController", function($scope, $timeout, BdayReminderService){
+angular.module("BdayReminder").controller("HomeController", function($scope, $timeout, BdayReminderService, SweetAlert){
   $scope.getValues = function() {
     $scope.username = BdayReminderService.getUsername();
     $scope.date = new Date();
@@ -31,7 +31,7 @@ angular.module("BdayReminder").controller("HomeController", function($scope, $ti
     });
 
     BdayReminderService.sendEmails(patients, function(){
-      alert('Done');
+      SweetAlert.swal("Done!", "Emails are sent to the patients!", "success");
     });
   };
 
