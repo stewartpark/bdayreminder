@@ -16,7 +16,6 @@ WORKDIR /app
 ADD . /app
 EXPOSE 80
 RUN pip install -r requirements.txt
-RUN bower install
 RUN /app/manage.py migrate
 
 CMD ["runserver", "0.0.0.0:80"]

@@ -10,11 +10,19 @@ Birthday Reminder, written in Python/Django + Celery + Angular.js.
 
 ## How to deploy via Docker
 
-To deploy the server, type the following in a docker host:
+To build the docker image, type the following:
 
 ```
-$ docker build -t bday_reminder .
+# Install front-end dependencies.
+$ bower install
 
+# Build the image.  
+$ docker build -t bday_reminder .
+```
+
+To deploy the server, push the docker image to the remote server and type the following in a docker host:
+
+```
 # Standalone Django web server
 $ docker run -d -p 80:80 \
     -e DRCHRONO_CLIENT_ID=<client_id>  \
