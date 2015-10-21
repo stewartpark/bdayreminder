@@ -1,6 +1,6 @@
 angular.module("BdayReminder").controller("StatisticsController", function($scope, BdayReminderService){
   $scope.labels = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-  $scope.series = ['# of Patients'];
+  $scope.series = ['Number of Patients'];
   $scope.data = [
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
   ];
