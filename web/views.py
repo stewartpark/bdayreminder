@@ -3,8 +3,10 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.conf import settings
 from django.utils.safestring import mark_safe
+from django.views.decorators.csrf import ensure_csrf_cookie
 
 
+@ensure_csrf_cookie
 def index(req):
     """
     The index view function.
