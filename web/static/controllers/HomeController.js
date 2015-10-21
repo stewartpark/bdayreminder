@@ -30,8 +30,26 @@ angular.module("BdayReminder").controller("HomeController", function($scope, $ti
       return $scope.birthdayFilter(o);
     });
 
-    BdayReminderService.sendEmails(patients, function(){
-      SweetAlert.swal("Done!", "Emails are sent to the patients!", "success");
+    var list_patients = "";
+    for(var i in patients) {
+      list_patients += patients[i].email + "\n";
+    }
+
+    SweetAlert.swal({
+      title: "Are you sure?",
+      text: "You are about to send emails to the below patients:\n\n" + list_patients,
+      type: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#DD6B55",
+      confirmButtonText: "Yes",
+      cancelButtonText: "Cancel",
+      closeOnConfirm: false
+    }, function(isConfirm){
+       if (isConfirm) {
+         BdayReminderService.sendEmails(patients, function(){
+           SweetAlert.swal("Done!", "Emails are sent to the patients!", "success");
+         });
+       }
     });
   };
 

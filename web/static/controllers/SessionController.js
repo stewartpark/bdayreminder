@@ -1,4 +1,4 @@
-angular.module("BdayReminder").controller("SessionController", function($scope, $location, BdayReminderService){
+angular.module("BdayReminder").controller("SessionController", function($scope, $location, BdayReminderService, SweetAlert){
   $scope.loggedIn = false;
 
   BdayReminderService.checkIfLoggedIn(function(cond) {
@@ -19,6 +19,18 @@ angular.module("BdayReminder").controller("SessionController", function($scope, 
   });
 
   $scope.clickLogOut = function() {
-
+    SweetAlert.swal({
+      title: "Are you sure?",
+      text: "You are about to sign off",
+      type: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#DD6B55",
+      confirmButtonText: "Yes",
+      cancelButtonText: "Cancel",
+    }, function(isConfirm){
+       if (isConfirm) {
+         BdayReminderService.logOut();
+       }
+    });
   };
 });
