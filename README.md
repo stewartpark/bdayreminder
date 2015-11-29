@@ -3,7 +3,7 @@ Birthday Reminder built for <img src="https://github.com/stewartpark/bdayreminde
 
 Birthday Reminder, written in Python/Django + Celery + Angular.js.
 
-[Demo](http://dev.epilet.com:8000/)
+<strike>[Demo](-)</strike>
 
 ![](https://github.com/stewartpark/bdayreminder/blob/master/misc/Login.png)
 ![](https://github.com/stewartpark/bdayreminder/blob/master/misc/Main.png)
